@@ -47,8 +47,14 @@ stages:
         scriptLocation: inlineScript
         workingDirectory: $(System.DefaultWorkingDirectory)/terraform
         inlineScript: |
-          echo "##[group]Terraform Init/Plan/Apply"
+          set -e
+
+          echo "Current directory: $(pwd)"
+          ls -al
+
+          terraform --version
+          
           terraform init -input=false 
           terraform plan -input=false -var-file="envs/dev.tfvars"
           terraform apply -input=false -auto-approve -var-file="envs/dev.tfvars"
-          echo "##[endgroup]"
+          
