@@ -53,8 +53,8 @@ stages:
           ls -al
 
           terraform --version
-          
+
           terraform init -input=false 
-          terraform plan -input=false -var-file="envs/dev.tfvars"
-          terraform apply -input=false -auto-approve -var-file="envs/dev.tfvars"
+          terraform plan -input=false -var-file="$(System.DefaultWorkingDirectory)/terraform/envs/dev.tfvars" -out=tfplan
+          terraform apply -input=false -auto-approve -var-file="$(System.DefaultWorkingDirectory)/terraform/envs/dev.tfvars"
           
