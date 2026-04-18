@@ -1,0 +1,12 @@
+application_name               = "DevOps1-pm1"
+environment                    = "dev"
+location                       = "South Africa North"
+admin_username                 = "azureuser"
+admin_password                 = "Arigidi1994"
+mysql_admin_username           = "mysqladmin"
+mysql_admin_password           = "Arigidi1994"
+mysql_database_name            = "epicbook_dev"
+vnet_address_space             = ["10.0.0.0/16"]
+public_subnet_address_prefixes = ["10.0.1.0/24"]
+vm_size                        = "Standard_D2s_v3"
+ssh_public_key                 = "~/.ssh/id_rsa.pub"
